@@ -1,0 +1,9 @@
+{
+    "extra": {
+        "isJavaScriptEnabled": true
+    },
+    "name": "nixos-{{version}}",
+    "revision": "0",
+    "title": "NixOS - {{version}}",
+    "version": "{{version}}"
+}
