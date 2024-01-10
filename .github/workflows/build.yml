@@ -1,0 +1,16 @@
+name: "Build"
+on:
+  pull_request:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: cachix/install-nix-action@v22
+        with:
+          name: nixos-dash-docset
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+
+      - run: nix build .
