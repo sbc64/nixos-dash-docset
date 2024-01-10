@@ -8,9 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: DeterminateSystems/nix-installer-action@main
-      - uses: cachix/install-nix-action@v22
+      - uses: cachix/cachix-action@v13
         with:
           name: nixos-dash-docset
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-
       - run: nix build .
