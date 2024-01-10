@@ -2,10 +2,8 @@
   description = "Generate Dash compatible docsets for NixOS options.";
 
   inputs = rec {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     flake-utils.url = "github:numtide/flake-utils";
-    flake-compat.url = "github:edolstra/flake-compat";
-    flake-compat.flake = false;
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }:
@@ -24,7 +22,6 @@
 
         docset = mkDocset { test = false; };
         test   = mkDocset { test = true;  };
-
      in {
           packages = {
             inherit test docset;
